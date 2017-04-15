@@ -35,6 +35,7 @@ public class DEFrame extends JFrame {
 
         file = new JMenu("File");
         exportData = new JMenuItem("Export Data");
+        exportData.addActionListener(new ExportDataAction());
         createConnection = new JMenuItem("Create Data Connection");
         exit = new JMenuItem("Exit");
         exit.addActionListener(new ExitAction());
@@ -66,6 +67,18 @@ public class DEFrame extends JFrame {
                 //Do nothing
 
             }
+
+        }
+    }
+
+    private class ExportDataAction extends AbstractAction {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            JFileChooser fc = new JFileChooser();
+
+            fc.showOpenDialog(DEFrame.this);
 
         }
     }
